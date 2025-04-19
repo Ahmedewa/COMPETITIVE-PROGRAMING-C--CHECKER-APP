@@ -1,0 +1,117 @@
+NAME: DEPLOYMENT OF 'COMPETITIVE-PROGRAMING-C++-CHECKER-APP'
+
+FILE NAME-COMPETITIVE-PROGRAMING-C--CHECKER-APP/github/workflows/main.yml
+
+A. DEPLOYMENT : Using GitHub Action workflows pipeline,
+
+B. Docker(Docker compose)
+
+
+ A. Deployment Using GitHub Action Workflow Pipeline
+
+ GitHub Actions Workflow
+
+```yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker image
+        run: docker build . -t my_cpp_checker
+
+      - name: Push Docker image
+        run: docker push my_cpp_checker
+
+      - name: Deploy to Server
+        run: |
+          ssh user@server 'docker pull my_cpp_checker && docker-compose up -d'
+```
+
+B. Docker (Docker Compose)
+
+To manage your application’s services, use Docker Compose.
+
+#### Example `docker-compose.yml`
+
+```yaml
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+```
+
+6. Start and Build Packages Using JSON
+
+You can use `package.json` for managing your Node.js dependencies in a React app.
+
+#### Example `package.json`
+
+```json
+{
+  "name": "competitive-programming-checker",
+  "version": "1.0.0",
+  "description": "A platform for checking C++ code submissions",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "devDependencies": {},
+  "license": "MIT"
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
