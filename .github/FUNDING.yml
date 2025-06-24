@@ -1,0 +1,72 @@
+# Supported Funding Models
+
+Use the following platforms to specify funding details:
+
+github: Up to 4 GitHub Sponsors usernames (e.g., [user1, user2])
+patreon: A single Patreon username
+open_collective: A single Open Collective username
+ko_fi: A single Ko-fi username
+tidelift: A single Tidelift platform-name/package-name (e.g., npm/babel)
+community_bridge: A single Community Bridge project-name (e.g., cloud-foundry)
+liberapay: A single Liberapay username
+issuehunt: A single IssueHunt username
+lfx_crowdfunding: A single LFX Crowdfunding project-name (e.g., cloud-foundry)
+polar: A single Polar username
+buy_me_a_coffee: A single Buy Me a Coffee username
+thanks_dev: A single thanks.dev username
+custom: Up to 4 custom sponsorship URLs (e.g., ['link1', 'link2'])## Usage
+
+Specify funding details in a structured format, typically within a project's configuration file (e.g., `.github/FUNDING.yml`). This allows platforms and tools to easily discover and display funding information to potential sponsors.
+
+## Example
+
+```yaml
+github: [user1, user2, user3]
+patreon: patreon_username
+open_collective: open_collective_username
+ko_fi: kofi_username
+tidelift: npm/package-name
+community_bridge: project-name
+liberapay: liberapay_username
+issuehunt: issuehunt_username
+lfx_crowdfunding: project-name
+polar: polar_username
+buy_me_a_coffee: buymeacoffee_username
+thanks_dev: thanksdev_username
+custom: ['https://custom.link/1', 'https://custom.link/2']
+```
+
+## Notes
+
+*   Prioritize using official platform usernames over custom URLs when possible.
+*   Ensure that the specified usernames/project names are accurate and up-to-date.
+*   Consider adding a `custom` URL for platforms not explicitly supported.
+*   Multiple platforms can be used simultaneously to maximize funding opportunities.## Best Practices
+
+*   Provide clear and concise descriptions on your sponsorship pages. Explain what the funds will be used for and how they will benefit the project.
+*   Keep your funding information up-to-date. Regularly review and update your `.github/FUNDING.yml` file to reflect any changes in your funding preferences.
+*   Acknowledge your sponsors! Publicly thank your sponsors for their support, either on your project's website, in release notes, or through other channels.
+*   Make it easy for sponsors to contribute. Ensure that the links to your sponsorship pages are easily accessible and prominently displayed on your project's website and documentation.
+*   Consider offering different tiers of sponsorship with varying benefits. This can incentivize larger contributions and provide sponsors with additional recognition.
+
+## Discoverability
+
+Platforms like GitHub automatically detect and display funding information from the `.github/FUNDING.yml` file on project repositories. This makes it easier for potential sponsors to discover and support your project. Other tools and platforms may also leverage this file to aggregate and showcase open-source funding opportunities.
+
+## Benefits
+
+By providing clear and structured funding information, you can:
+
+*   Increase the visibility of your project's funding needs.
+*   Make it easier for potential sponsors to contribute.
+*   Build a sustainable funding model for your open-source project.
+*   Foster a stronger connection with your community.
+
+## Troubleshooting
+
+*   **My funding information isn't showing up on GitHub:** Double-check that your `.github/FUNDING.yml` file is correctly formatted and located in the `.github` directory at the root of your repository. Verify that the specified usernames and project names are accurate. It may take a few minutes for the information to appear after you commit the file.
+*   **I want to add a platform that isn't explicitly supported:** Use the `custom` field to specify a URL to your sponsorship page on that platform.
+*   **I'm having trouble creating a `.github/FUNDING.yml` file:** Refer to the official GitHub documentation for detailed instructions and examples. You can also use online YAML validators to ensure that your file is correctly formatted.
+
+By following these guidelines, you can effectively leverage structured funding models to support your open-source project and ensure its
+long-term sustainability.
